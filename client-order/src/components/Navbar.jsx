@@ -26,19 +26,18 @@ const Navbar = () => {
         </div>
        <div className="hidden lg:block">
        <ul className="flex items-center gap-6 text-gray-300 ">
-          <li className=" cursor-pointer" style={{color:Colors[theme].btnBg}}>Home</li>
+          <li className=" cursor-pointer font-semibold" style={{color:Colors[theme].btnBg}}>Home</li>
 
           {/* Movies Dropdown */}
           <li
             className="relative cursor-pointer "
-            style={{ color: Colors[theme].bg }}
+            style={{ color: Colors[theme].btnTxt }}
            
             onMouseEnter={(e) =>{ setActiveDropdown("movies")
               (e.target.style.color = Colors[theme].btnBg)
             }}
-            onMouseLeave={(e) => {setActiveDropdown(null)
-              (e.target.style.color = Colors[theme].bg)
-            }}
+            onMouseLeave={(e)=>(e.target.style.color = Colors[theme].btnTxt)}
+            onClick={(e) => {setActiveDropdown(null) }}
           >
             Movies ⌄
             {activeDropdown === "movies" && (
@@ -46,7 +45,7 @@ const Navbar = () => {
               style={{backgroundColor:Colors[theme].bg}}>
                 <li className="p-2" style={{color:Colors[theme].text}}  onMouseEnter={(e) =>{
               e.target.style.backgroundColor = Colors[theme].btnBg;
-              e.target.style.color = Colors[theme].bg
+              e.target.style.color = Colors[theme].btnTxt
              }
             }
             onMouseLeave={(e) =>
@@ -55,7 +54,7 @@ const Navbar = () => {
             }>Action</li>
                 <li className="p-2" style={{color:Colors[theme].text}}  onMouseEnter={(e) =>{
               e.target.style.backgroundColor = Colors[theme].btnBg;
-              e.target.style.color = Colors[theme].bg
+              e.target.style.color = Colors[theme].btnTxt
              }
             }
             onMouseLeave={(e) =>
@@ -64,7 +63,7 @@ const Navbar = () => {
             }>Comedy</li>
                 <li className="p-2" style={{color:Colors[theme].text}}  onMouseEnter={(e) =>{
               e.target.style.backgroundColor = Colors[theme].btnBg;
-              e.target.style.color = Colors[theme].bg
+              e.target.style.color = Colors[theme].btnTxt
              }
             }
             onMouseLeave={(e) =>
@@ -77,31 +76,30 @@ const Navbar = () => {
           {/* TV Shows Dropdown */}
           <li
             className="relative cursor-pointer "
-            style={{ color: Colors[theme].bg }}
+            style={{ color: Colors[theme].btnTxt }}
            
-            onMouseEnter={(e) =>{ setActiveDropdown("tvshows")
+            onMouseEnter={(e) =>{ setActiveDropdown("tvShows")
               (e.target.style.color = Colors[theme].btnBg)
             }}
-            onMouseLeave={(e) => {setActiveDropdown(null)
-              (e.target.style.color = Colors[theme].bg)
-            }}
+            onMouseLeave={(e)=>(e.target.style.color = Colors[theme].btnTxt)}
+            onClick={(e) => {setActiveDropdown(null) }}
           >
-            TvShows ⌄
-            {activeDropdown === "tvshows" && (
+            Tv Shows ⌄
+            {activeDropdown === "tvShows" && (
               <ul className="absolute left-0 top-full mt-2 w-40  shadow-lg rounded-md"
               style={{backgroundColor:Colors[theme].bg}}>
                 <li className="p-2" style={{color:Colors[theme].text}}  onMouseEnter={(e) =>{
               e.target.style.backgroundColor = Colors[theme].btnBg;
-              e.target.style.color = Colors[theme].bg
+              e.target.style.color = Colors[theme].btnTxt
              }
             }
             onMouseLeave={(e) =>
               {e.target.style.color = Colors[theme].text
               e.target.style.backgroundColor = Colors[theme].bg}
             }>Action</li>
-                <li className="p-2" style={{color:Colors[theme].text}}   onMouseEnter={(e) =>{
+                <li className="p-2" style={{color:Colors[theme].text}}  onMouseEnter={(e) =>{
               e.target.style.backgroundColor = Colors[theme].btnBg;
-              e.target.style.color = Colors[theme].bg
+              e.target.style.color = Colors[theme].btnTxt
              }
             }
             onMouseLeave={(e) =>
@@ -110,7 +108,7 @@ const Navbar = () => {
             }>Comedy</li>
                 <li className="p-2" style={{color:Colors[theme].text}}  onMouseEnter={(e) =>{
               e.target.style.backgroundColor = Colors[theme].btnBg;
-              e.target.style.color = Colors[theme].bg
+              e.target.style.color = Colors[theme].btnTxt
              }
             }
             onMouseLeave={(e) =>
@@ -123,40 +121,39 @@ const Navbar = () => {
            {/* Video Shows Dropdown */}
            <li
             className="relative cursor-pointer "
-            style={{ color: Colors[theme].bg }}
+            style={{ color: Colors[theme].btnTxt }}
            
-            onMouseEnter={(e) =>{ setActiveDropdown("video")
+            onMouseEnter={(e) =>{ setActiveDropdown("videos")
               (e.target.style.color = Colors[theme].btnBg)
             }}
-            onMouseLeave={(e) => {setActiveDropdown(null)
-              (e.target.style.color = Colors[theme].bg)
-            }}
+            onMouseLeave={(e)=>(e.target.style.color = Colors[theme].btnTxt)}
+            onClick={(e) => {setActiveDropdown(null) }}
           >
             Videos ⌄
-            {activeDropdown === "video" && (
+            {activeDropdown === "videos" && (
               <ul className="absolute left-0 top-full mt-2 w-40  shadow-lg rounded-md"
               style={{backgroundColor:Colors[theme].bg}}>
-                <li className="p-2" style={{color:Colors[theme].text}} onMouseEnter={(e) =>{
+                <li className="p-2" style={{color:Colors[theme].text}}  onMouseEnter={(e) =>{
               e.target.style.backgroundColor = Colors[theme].btnBg;
-              e.target.style.color = Colors[theme].bg
+              e.target.style.color = Colors[theme].btnTxt
              }
             }
             onMouseLeave={(e) =>
               {e.target.style.color = Colors[theme].text
               e.target.style.backgroundColor = Colors[theme].bg}
             }>Action</li>
-                <li className="p-2" style={{color:Colors[theme].text}} onMouseEnter={(e) =>{
+                <li className="p-2" style={{color:Colors[theme].text}}  onMouseEnter={(e) =>{
               e.target.style.backgroundColor = Colors[theme].btnBg;
-              e.target.style.color = Colors[theme].bg
+              e.target.style.color = Colors[theme].btnTxt
              }
             }
             onMouseLeave={(e) =>
               {e.target.style.color = Colors[theme].text
               e.target.style.backgroundColor = Colors[theme].bg}
             }>Comedy</li>
-                <li className="p-2" style={{color:Colors[theme].text}} onMouseEnter={(e) =>{
+                <li className="p-2" style={{color:Colors[theme].text}}  onMouseEnter={(e) =>{
               e.target.style.backgroundColor = Colors[theme].btnBg;
-              e.target.style.color = Colors[theme].bg
+              e.target.style.color = Colors[theme].btnTxt
              }
             }
             onMouseLeave={(e) =>
@@ -169,40 +166,39 @@ const Navbar = () => {
             {/* Pages Shows Dropdown */}
             <li
             className="relative cursor-pointer "
-            style={{ color: Colors[theme].bg }}
+            style={{ color: Colors[theme].btnTxt }}
            
             onMouseEnter={(e) =>{ setActiveDropdown("pages")
               (e.target.style.color = Colors[theme].btnBg)
             }}
-            onMouseLeave={(e) => {setActiveDropdown(null)
-              (e.target.style.color = Colors[theme].bg)
-            }}
+            onMouseLeave={(e)=>(e.target.style.color = Colors[theme].btnTxt)}
+            onClick={(e) => {setActiveDropdown(null) }}
           >
             Pages ⌄
             {activeDropdown === "pages" && (
               <ul className="absolute left-0 top-full mt-2 w-40  shadow-lg rounded-md"
               style={{backgroundColor:Colors[theme].bg}}>
-                <li className="p-2" style={{color:Colors[theme].text}} onMouseEnter={(e) =>{
+                <li className="p-2" style={{color:Colors[theme].text}}  onMouseEnter={(e) =>{
               e.target.style.backgroundColor = Colors[theme].btnBg;
-              e.target.style.color = Colors[theme].bg
+              e.target.style.color = Colors[theme].btnTxt
              }
             }
             onMouseLeave={(e) =>
               {e.target.style.color = Colors[theme].text
               e.target.style.backgroundColor = Colors[theme].bg}
             }>Action</li>
-                <li className="p-2" style={{color:Colors[theme].text}} onMouseEnter={(e) =>{
+                <li className="p-2" style={{color:Colors[theme].text}}  onMouseEnter={(e) =>{
               e.target.style.backgroundColor = Colors[theme].btnBg;
-              e.target.style.color = Colors[theme].bg
+              e.target.style.color = Colors[theme].btnTxt
              }
             }
             onMouseLeave={(e) =>
               {e.target.style.color = Colors[theme].text
               e.target.style.backgroundColor = Colors[theme].bg}
             }>Comedy</li>
-                <li className="p-2" style={{color:Colors[theme].text}} onMouseEnter={(e) =>{
+                <li className="p-2" style={{color:Colors[theme].text}}  onMouseEnter={(e) =>{
               e.target.style.backgroundColor = Colors[theme].btnBg;
-              e.target.style.color = Colors[theme].bg
+              e.target.style.color = Colors[theme].btnTxt
              }
             }
             onMouseLeave={(e) =>

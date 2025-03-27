@@ -51,7 +51,7 @@ const dispatch=useDispatch()
       <form
         onSubmit={onSubmitHandler}
         className={`flex flex-col items-center w-[90%] m-auto sm:max-w-96 pt-50 gap-4 transition-all duration-1000  ${
-          isVisible ? "opacity-100 -translate-y-0" : "opacity-0 translate-y-50"
+          isVisible ? "opacity-100 -translate-y-0" : "opacity-0 translate-y-70"
         }`}
       >
         <div className="inline-flex items-center gap-2 mb-2 scroll-mt-10">
