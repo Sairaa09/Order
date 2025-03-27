@@ -10,10 +10,12 @@ import Subscription from './pages/Subscription'
 import UserProfile from './pages/UserProfile'
 import VideoPlayer from './pages/VideoPlayer'
 import Home from './pages/Home'
+
 const App = () => {
   return (
     <div>
       <BrowserRouter>
+      
     <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/autoblog' element={<AutoBlog/>} />

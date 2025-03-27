@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Colors from "../colors.js";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import Theme from '../assets/theme.svg'
 import { setTheme } from "../redux/Slices/ThemeSlice.js";
-import Title from "../components/Title.jsx";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const theme = useSelector((state) => state.theme.theme);
-  const dispatch = useDispatch();
 
+const dispatch=useDispatch()
   const [currentState, setcurrentState] = useState("Login");
   const [isVisible, setisVisible] = useState(false);
 
@@ -33,17 +34,32 @@ const Login = () => {
 
   return (
     <div
-      className="h-screen"
+      className="h-screen "
       style={{ backgroundColor: "var(--bg-color)", color: "var(--text-color)" }}
+      
     >
+      <div className="flex justify-between px-30 pt-3 ">
+     <Link to='/'>
+     <div className="text-2xl font-bold flex items-center gap-2">
+          
+          STREAMLAB
+        </div></Link>
+        <div className="w-8 h-8  flex justify-center items-center rounded-full cursor-pointer" style={{backgroundColor:Colors[theme].btnBg}} onClick={()=>dispatch(setTheme(theme === "light" ? "dark" : "light"))}>
+          <img src={Theme} alt="" />
+        </div>
+      </div>
       <form
         onSubmit={onSubmitHandler}
-        className={`flex flex-col items-center w-[90%] m-auto sm:max-w-96 pt-14 gap-4 transition-all duration-1000  ${
+        className={`flex flex-col items-center w-[90%] m-auto sm:max-w-96 pt-50 gap-4 transition-all duration-1000  ${
           isVisible ? "opacity-100 -translate-y-0" : "opacity-0 translate-y-50"
         }`}
       >
         <div className="inline-flex items-center gap-2 mb-2 scroll-mt-10">
-          <Title Title="LOG IN" color={Colors[theme].btnBg} />
+        <div>
+      <p className='prata-regular text-3xl'>{currentState === "Login" ? "Login" : "Sign Up"}</p>
+      <hr className='border-none h-[2.5px] w-full mt-1 '
+      style={{backgroundColor:Colors[theme].btnBg}} />
+    </div>
         </div>
         {currentState === "Login" ? (
           " "
@@ -106,6 +122,12 @@ const Login = () => {
             <p
               className="cursor-pointer"
               onClick={() => setcurrentState("Login")}
+              onMouseEnter={(e) =>
+                (e.target.style.color = Colors[theme].btnBg)
+              }
+              onMouseLeave={(e) =>
+                (e.target.style.color = Colors[theme].text)
+              }
             >
               Login here
             </p>
@@ -117,13 +139,7 @@ const Login = () => {
         >
           {currentState === "Login" ? "Sign In" : "Sign Up"}
         </button>
-        <button
-          onClick={() =>
-            dispatch(setTheme(theme === "light" ? "dark" : "light"))
-          }
-        >
-          Change Theme
-        </button>
+        
       </form>
     </div>
   );
